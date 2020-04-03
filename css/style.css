@@ -1,0 +1,69 @@
+:root {
+    --red: hsl(0, 100%, 74%);
+    --green: hsl(154, 59%, 51%);
+    --blue: hsl(248, 32%, 49%);
+    --dark-blue: hsl(249, 10%, 26%);
+    --grayish-blue: hsl(246, 25%, 77%);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    background-color: var(--red);
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    color: #fff;
+}
+
+ul {
+    list-style: none;
+}
+
+h1 {
+    font-size: 1.65rem;
+    line-height: 35px;
+    margin: 90px 0 20px 0;
+}
+
+button {
+    background-color: var(--blue);
+    width: 100%;
+    padding: 15px 60px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1rem;
+    line-height: 25px;
+    border: none;
+    border-radius: 8px;
+}
+
+button span {
+    font-weight: 500;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+    background-image: url(../img/bg-intro-mobile.png);
+    background-position: center;
+    background-size: cover;
+}
+
+.column-left,
+.column-right {
+    text-align: center;
+    width: 85%;
+}
+
+
+
+.attribution { font-size: 11px; text-align: center; }
+.attribution a { color: hsl(228, 45%, 44%); }
