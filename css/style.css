@@ -6,6 +6,9 @@
     --grayish-blue: hsl(246, 25%, 77%);
 }
 
+/* ---------------------------------- */
+/* RESETS */
+/* ---------------------------------- */
 * {
     margin: 0;
     padding: 0;
@@ -18,8 +21,40 @@ body {
     font-family: 'Poppins', sans-serif;
     font-weight: 400;
     font-size: 16px;
-    color: #fff;
+    color: #ffffff;
 }
+
+button:focus {
+    outline: none;
+}
+
+
+/* ---------------------------------- */
+/* LAYOUT */
+/* ---------------------------------- */
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    background-image: url(../img/bg-intro-mobile.png);
+    background-position: top;
+    background-size: cover;
+    padding: 70px 0;
+}
+
+.column-left,
+.column-right {
+    margin: 30px;
+    text-align: center;
+    width: 85%;
+}
+
+
+/* ---------------------------------- */
+/* MAIN STYLES */
+/* ---------------------------------- */
 
 ul {
     list-style: none;
@@ -28,10 +63,14 @@ ul {
 h1 {
     font-size: 1.65rem;
     line-height: 35px;
-    margin: 90px 0 20px 0;
+    margin-bottom: 20px;
 }
 
+
+/* BUTTONS */
+
 button {
+    color: #ffffff;
     background-color: var(--blue);
     width: 100%;
     padding: 15px 60px;
@@ -40,30 +79,105 @@ button {
     line-height: 25px;
     border: none;
     border-radius: 8px;
+    box-shadow: -1px 9px 5px -2px rgba(0, 0, 0, 0.247);
+}
+
+.btn-offer {
+    position: relative;
+    top: 0px;
+}
+
+.btn-offer:hover,
+.btn-offer:focus {
+    background-color: hsl(248, 32%, 60%);
+    top: 3px;
 }
 
 button span {
-    font-weight: 500;
+    font-weight: 700;
 }
 
-.container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+.form-btn {
+    background-color: var(--green);
+    padding: 15px 30px;
+    box-shadow: none;
+    position: relative;
+    bottom: 3px;
+}
+
+.form-btn:hover,
+.form-btn:focus {
+    background-color: hsl(154, 59%, 60%);
+}
+
+.form-btn:active {
+    bottom: 0px;
+}
+
+.btn-shadow {
+    background-color: hsl(154, 59%, 40%);
     width: 100%;
-    height: 100vh;
-    background-image: url(../img/bg-intro-mobile.png);
-    background-position: center;
-    background-size: cover;
-}
-
-.column-left,
-.column-right {
-    text-align: center;
-    width: 85%;
+    border-radius: 8px;
 }
 
 
+/* ---------------------------------- */
+/* FORM */
+/* ---------------------------------- */
 
+form {
+    color: var(--grayish-blue);
+    background-color: #ffffff;
+    padding: 25px 28px;
+    border-radius: 8px;
+    margin: 20px 0;
+}
+
+li {
+    margin-top: 15px;
+}
+
+li:first-child {
+    margin-top: 0px;
+}
+
+input {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    width: 100%;
+    height: 55px;
+    padding: 0 15px;
+    border-radius: 5px;
+    border: 1px solid var(--grayish-blue);
+}
+
+input:focus {
+    outline: 3px solid var(--grayish-blue);
+    border: 3px solid var(--grayish-blue);
+}
+
+/* input:invalid {
+    border-radius: 5px;
+    border: 3px solid var(--red); */
+}
+
+.error {
+    font-size: 0.65rem;
+    font-weight: 500;
+    color: var(--red);
+    width: 100%;
+    text-align: right;
+    line-height: 20px;
+}
+
+.terms {
+    font-size: 0.65rem;
+    padding: 15px 22px 0px 22px;
+}
+
+.terms-link {
+    font-weight: 700;
+    color: var(--red);
+}
 .attribution { font-size: 11px; text-align: center; }
 .attribution a { color: hsl(228, 45%, 44%); }

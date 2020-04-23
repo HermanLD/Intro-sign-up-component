@@ -18,29 +18,35 @@
     <div class="column-left">
       <h1>Learn to code by watching others</h1>
       <p>See how experienced developers solve problems in real-time. Watching scripted tutorials is great, 
-  but understanding how developers think is invaluable.</p>
+      but understanding how developers think is invaluable.</p>
     </div>
     <div class="column-right">
-      <button><span>Try it free 7 days</span> then $20/mo. thereafter</button>
-      <form>
+      <button class="btn-offer"><span>Try it free 7 days</span> then $20/mo. thereafter</button>
+      <form novalidate>
         <ul>
           <li>
-            <input type="text" id="first-name" placeholder="First Name">
+            <input type="text" id="first-name" placeholder="First Name" required>
+            <div class="error" aria-live="polite"><em>First Name cannot be empty</em></div>
           </li>
           <li>
-            <input type="text" id="last-name" placeholder="Last Name">
+            <input type="text" id="last-name" placeholder="Last Name" required>
+            <div class="error" aria-live="polite" hidden><em></em></div>
           </li>
           <li>
-            <input type="email" id="email" placeholder="Email Address">
+            <input type="email" id="email" placeholder="Email Address" required>
+            <div class="error" aria-live="polite" hidden><em></em></div>
           </li>
           <li>
-            <input type="password" id="password" placeholder="Password">
+            <input type="password" id="password" placeholder="Password" required>
+            <div class="error" aria-live="polite" hidden><em></em></div>
           </li>
           <li>
-            <button type="submit" class="">Claim your free trial</button>
+            <div class="btn-shadow">
+              <button type="submit" class="form-btn">CLAIM YOUR FREE TRIAL</button>
+            </div>
           </li>
         </ul>
-        <p class="terms">By clicking the button, you are agreeing to our <a class="terms--link">Terms and Services</a></p>
+        <p class="terms">By clicking the button, you are agreeing to our <a class="terms-link">Terms and Services</a></p>
       </form>
     </div>
   </div>
