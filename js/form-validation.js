@@ -1,14 +1,13 @@
-(function () {
+function globalFunction() {
     //
     // Variables
     //
 
     const form = document.getElementById('form');
-    const firstName = document.getElementsById('first-name');
+    const firstName = document.getElementById('first-name');
     const lastName = document.getElementById('last-name');
     const email = document.getElementById('email');
     const password = document.getElementById('password');
-
 
     //
     // Methods
@@ -19,13 +18,13 @@
     }
 
     function showError(theInput) {
-        let theInput.className = 'invalid';
+        theInput.className = 'invalid';
         theInput.nextElementSibling.removeAttribute('hidden');
     }
 
     function clearError(theInput) {
         theInput.className = '';
-        theInput.nextElementSibling.setAttribute('hidden');
+        theInput.nextElementSibling.setAttribute('hidden', '');
         theInput.nextElementSibling.innerHTML = "";
     }
 
@@ -33,9 +32,7 @@
         for (let i = 0; i < inputs.length; i++) {
 
             // Remove Error messages
-            if (theInput.className === 'invalid' && !theInput.nextElementSibling.hasAttribute('hidden')) {
-                clearError(inputs[i]);
-            }
+            clearError(inputs[i]);
 
             // Error message if input left blank
             if (inputs[i].value.trim() === '') {
@@ -52,7 +49,6 @@
                 }
             }
         }
-        return;
     }
 
 
@@ -61,7 +57,7 @@
     //
 
     form.setAttribute('novalidate', true); //In case script fails, fallback to default error msgs
-    form.addEventListener('submit', checkError([firstName, lastName, email, password]));
+    form.addEventListener('submit', checkError([firstName, lastName, email, password]), true);
+}
 
-
-}) ();
+globalFunction();
