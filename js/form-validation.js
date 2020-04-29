@@ -28,7 +28,24 @@ function globalFunction() {
         theInput.nextElementSibling.innerHTML = "";
     }
 
-    function checkError(inputs) {
+    function checkForError(inputs) {
+        for (let i = 0; i < inputs.length; i++) {
+            if (inputs[i].className === 'invalid') {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    //
+    // Inits & Event Listeners
+    //
+
+    form.setAttribute('novalidate', true); //In case script fails, fallback to default error msgs
+    form.addEventListener('submit', function (event) {
+        
+        let inputs = [firstName, lastName, email, password];
+        
         for (let i = 0; i < inputs.length; i++) {
 
             // Remove Error messages
@@ -41,7 +58,7 @@ function globalFunction() {
             }
 
             // Error message if Email input does not match email pattern
-            if (inputs[i].getAttribute('id') === 'email') {
+            if (inputs[i].getAttribute('id') === 'email' && inputs[i].value.length !== 0) {
                 var emailRegEx = /^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$/;
                 if (!emailRegEx.test(inputs[i].value.trim())) {
                     insertMsg(inputs[i], `<em>Looks like this is not an ${inputs[i].getAttribute('placeholder')}</em>`);
@@ -49,15 +66,10 @@ function globalFunction() {
                 }
             }
         }
-    }
-
-
-    //
-    // Inits & Event Listeners
-    //
-
-    form.setAttribute('novalidate', true); //In case script fails, fallback to default error msgs
-    form.addEventListener('submit', checkError([firstName, lastName, email, password]), true);
+        if (checkForError(inputs) === true) {
+          event.preventDefault();
+        }
+    });
 }
 
 globalFunction();
