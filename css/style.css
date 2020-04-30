@@ -129,9 +129,9 @@ button span {
 form {
     color: var(--grayish-blue);
     background-color: #ffffff;
-    padding: 25px 28px;
+    padding: 35px 28px;
     border-radius: 8px;
-    margin: 20px 0;
+    margin: 25px 0;
 }
 
 li {
@@ -183,6 +183,10 @@ input.invalid {
 .attribution { font-size: 11px; text-align: center; }
 .attribution a { color: hsl(228, 45%, 44%); }
 
+
+/* ---------------------------------- */
+/* FORM */
+/* ---------------------------------- */
 
 @media only screen and (min-width: 650px) {
     
