@@ -142,6 +142,10 @@ li:first-child {
     margin-top: 0px;
 }
 
+.form-control {
+    position: relative;
+}
+
 input {
     font-family: 'Poppins', sans-serif;
     font-weight: 600;
@@ -160,6 +164,11 @@ input:focus {
 input.invalid {
     border-radius: 5px;
     border: 3px solid var(--red);
+    color: var(--red);
+}
+
+input.invalid::placeholder {
+    color: transparent;
 }
 
 .error {
@@ -169,6 +178,13 @@ input.invalid {
     width: 100%;
     text-align: right;
     line-height: 20px;
+}
+
+.error-icon {
+    visibility: hidden;
+    position: absolute;
+    bottom: 35px;
+    right: 15px;
 }
 
 .terms {
@@ -185,7 +201,7 @@ input.invalid {
 
 
 /* ---------------------------------- */
-/* FORM */
+/* MEDIA QUERIES */
 /* ---------------------------------- */
 
 @media only screen and (min-width: 650px) {

@@ -19,11 +19,13 @@ function globalFunction() {
 
     function showError(theInput) {
         theInput.className = 'invalid';
+        theInput.previousElementSibling.style.visibility = "visible";
         theInput.nextElementSibling.removeAttribute('hidden');
     }
 
     function clearError(theInput) {
         theInput.className = '';
+        theInput.previousElementSibling.style.visibility = 'hidden';
         theInput.nextElementSibling.setAttribute('hidden', '');
         theInput.nextElementSibling.innerHTML = "";
     }
